@@ -1,0 +1,25 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Ahmed Ali",
+      "text": "Great quality products!",
+      "rating": 5,
+      "date": "2026-05-01"
+    },
+    {
+      "id": 2,
+      "name": "Sara Khan",
+      "text": "Fast delivery, highly recommend.",
+      "rating": 4,
+      "date": "2026-05-05"
+    },
+    {
+      "id": 3,
+      "name": "Karim Ullah",
+      "text": "Affordable prices.",
+      "rating": 5,
+      "date": "2026-05-10"
+    }
+  ]
+}
