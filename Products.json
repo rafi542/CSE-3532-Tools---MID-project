@@ -1,0 +1,87 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Black Premium Panjabi",
+      "price": 2200,
+      "category": "panjabi",
+      "image": "https://commandobd.com/wp-content/uploads/2023/03/DSC00486-300x300.gif",
+      "rating": {
+        "rate": 4.8
+      }
+    },
+
+    {
+      "id": 2,
+      "title": "Men’s Sea-Green Color Cotton Panjabi ",
+      "price": 2300,
+      "category": "panjabi",
+      "image": "https://www.deshigreetings.com/public/uploads/all/U3iT0iSn1Bgzoe7bmo9ozOymJeSTulV4swPcReGz.jpg",
+      "rating": {
+        "rate": 4.5
+      }
+    },
+    
+    {
+      "id": 3,
+      "title": "White Eid Panjabi",
+      "price": 2500,
+      "category": "panjabi",
+      "image": "https://assets.myntassets.com/h_200,w_200,c_fill,g_auto/h_1440,q_100,w_1080/v1/assets/images/productimage/2019/9/23/e9d51b32-45ab-41e2-bc67-c2e440389d0d1569227704021-1.jpg",
+      "rating": {
+        "rate": 4.7
+      }
+    },
+    {
+      "id": 4,
+      "title": "Royal Oud Perfume",
+      "price": 1800,
+      "category": "perfume",
+      "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80",
+      "rating": {
+        "rate": 4.9
+      }
+    },
+
+    {
+      "id": 5,
+      "title": "Pink Perfume",
+      "price": 1850,
+      "category": "perfume",
+      "image": "https://static.vecteezy.com/system/resources/thumbnails/031/691/279/small_2x/summer-vanilla-perfume-background-with-copy-space-bright-pink-vanilla-perfume-banner-for-summer-ai-generative-free-photo.jpg",
+      "rating": {
+        "rate": 5.0
+      }
+    },
+    {
+      "id": 6,
+      "title": "Luxury Arabian Attar",
+      "price": 1500,
+      "category": "perfume",
+      "image": "https://static-01.daraz.com.bd/p/16c86196ee9d788760482e0b3b60fea3.jpg",
+      "rating": {
+        "rate": 4.6
+      }
+    },
+    {
+      "id": 7,
+      "title": "Classic Black Sunglass",
+      "price": 1200,
+      "category": "sunglass",
+      "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80",
+      "rating": {
+        "rate": 4.5
+      }
+    },
+    {
+      "id": 8,
+      "title": "Silver Frame Sunglass",
+      "price": 1400,
+      "category": "sunglass",
+      "image": "https://india.ray-ban.com/media/catalog/product/p/r/prod_2fproduct-image_2frayban_20monobrand_2frayban_2f8056597860703_2f8056597860703_2.jpg",
+      "rating": {
+        "rate": 4.4
+      }
+    }
+  ]
+}
