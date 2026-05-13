@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
+    <title>SmartShop</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            overflow-x:hidden;
+        }
+
+        img{
+            max-width:100%;
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 dark:text-white transition-all duration-300 font-sans">
+
+    <!-- NAVBAR -->
+    <nav class="bg-blue-600 dark:bg-gray-800 text-white sticky top-0 z-50 shadow">
+
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-3 flex flex-wrap md:flex-nowrap justify-between items-center gap-3">
+
+            <h1 class="text-2xl sm:text-3xl font-bold">
+                SmartShop
+            </h1>
+
+            <!-- DESKTOP MENU -->
+            <ul class="hidden md:flex gap-6 font-medium">
+
+                <li>
+                    <a href="#home" class="hover:text-yellow-300">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#products" class="hover:text-yellow-300">
+                        Products
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#reviews" class="hover:text-yellow-300">
+                        Reviews
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="hover:text-yellow-300">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="flex flex-wrap items-center justify-end gap-2 sm:gap-3">
+
+                <!-- THEME -->
+                <button onclick="toggleTheme()"
+                    class="bg-black/30 px-3 py-2 rounded">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <!-- BALANCE -->
+                <div class="bg-blue-800 px-2 sm:px-3 py-2 rounded text-xs sm:text-sm whitespace-nowrap">
+
+                    Balance:
+                    <span id="user-balance">1000</span> BDT
+
+                </div>
+
+                <!-- ADD MONEY -->
+                <button onclick="addMoney()"
+                    class="bg-green-500 px-2 sm:px-3 py-2 rounded text-sm sm:text-base">
+
+                    + Add Money
+
+                </button>
+
+                <!-- MOBILE MENU -->
+                <button onclick="toggleMenu()"
+                    class="md:hidden text-2xl">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-blue-700 px-4 py-4">
+
+            <ul class="flex flex-col gap-4">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#products">Products</a></li>
+
+                <li><a href="#reviews">Reviews</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- SLIDER -->
+    <section id="home"
+        class="relative h-[250px] sm:h-[350px] md:h-[450px] overflow-hidden">
+
+        <div id="banner-container"
+            class="flex h-full transition-all duration-700">
+
+            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1200&q=80"
+                class="min-w-full object-cover" />
+
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80"
+                class="min-w-full object-cover" />
+
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80"
+                class="min-w-full object-cover" />
+
+        </div>
+
+        <!-- OVERLAY -->
+        <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white text-center px-4">
+
+            <h2 class="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">
+
+                Welcome To SmartShop
+
+            </h2>
+
+            <p class="text-sm sm:text-lg md:text-xl">
+
+                Best Deals On Fashion, Perfumes & More
+
+            </p>
+
+        </div>
+
+        <!-- PREV -->
+        <button onclick="prevSlide()"
+            class="absolute left-2 sm:left-5 top-1/2 -translate-y-1/2 text-2xl sm:text-4xl text-white">
+
+            <i class="fa-solid fa-angle-left"></i>
+
+        </button>
+
+        <!-- NEXT -->
+        <button onclick="nextSlide()"
+            class="absolute right-2 sm:right-5 top-1/2 -translate-y-1/2 text-2xl sm:text-4xl text-white">
+
+            <i class="fa-solid fa-angle-right"></i>
+
+        </button>
+
+    </section>
+
+    <!-- MAIN -->
+    <main class="max-w-7xl mx-auto px-3 sm:px-4 grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 mt-6 sm:mt-10">
+
+        <!-- PRODUCTS -->
+        <section id="products" class="lg:col-span-3">
+
+            <!-- SEARCH + SORT -->
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-5">
+
+                <h2 class="text-2xl sm:text-3xl font-bold">
+
+                    Featured Products
+
+                </h2>
+
+                <div class="flex flex-col sm:flex-row w-full lg:w-auto gap-3">
+
+                    <!-- SEARCH -->
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search products..."
+                        onkeyup="filterProducts()"
+                        class="p-2 border rounded w-full sm:w-52 text-black"
+                    />
+
+                    <!-- SORT -->
+                    <select id="sort-select"
+                        onchange="sortProducts()"
+                        class="p-2 border rounded text-black w-full sm:w-auto">
+
+                        <option value="">Sort</option>
+
+                        <option value="low">Low To High</option>
+
+                        <option value="high">High To Low</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCT GRID -->
+            <div id="product-grid"
+                class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+
+            </div>
+
+        </section>
+
+        <!-- CART -->
+        <aside class="bg-blue-600 text-white p-4 sm:p-5 rounded shadow lg:sticky lg:top-24 h-fit">
+
+            <h2 class="text-xl sm:text-2xl font-bold mb-5">
+
+                Shopping Cart
+
+            </h2>
+
+            <div class="bg-white text-black dark:bg-gray-800 dark:text-white p-5 rounded">
+
+                <div id="cart-items"
+                    class="space-y-3 mb-5">
+
+                    <p class="text-gray-500">
+
+                        Cart is empty
+
+                    </p>
+
+                </div>
+
+                <!-- TOTAL -->
+                <div class="space-y-2">
+
+                    <div class="flex justify-between">
+
+                        <span>Subtotal:</span>
+
+                        <span id="subtotal">0</span>
+
+                    </div>
+
+                    <div class="flex justify-between">
+
+                        <span>Shipping:</span>
+
+                        <span>30</span>
+
+                    </div>
+
+                    <div class="flex justify-between">
+
+                        <span>Delivery:</span>
+
+                        <span>50</span>
+
+                    </div>
+
+                    <div class="flex justify-between">
+
+                        <span>Discount:</span>
+
+                        <span id="discount">0</span>
+
+                    </div>
+
+                    <div class="flex justify-between font-bold text-lg sm:text-xl">
+
+                        <span>Total:</span>
+
+                        <span id="final-total">80</span>
+
+                    </div>
+
+                </div>
+
+                <!-- COUPON -->
+                <input
+                    type="text"
+                    id="coupon-input"
+                    placeholder="Coupon Code"
+                    class="w-full mt-4 p-2 border rounded text-black"
+                />
+
+                <button onclick="applyCoupon()"
+                    class="w-full mt-3 bg-orange-500 text-white p-2 rounded">
+
+                    Apply SMART10
+
+                </button>
+
+                <!-- BUY -->
+                <button onclick="buyNow()"
+                    class="w-full mt-3 bg-green-500 text-white p-2 rounded">
+
+                    Buy Now
+
+                </button>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- REVIEWS -->
+    <section id="reviews"
+        class="bg-gray-200 dark:bg-gray-800 py-16 mt-10">
+
+        <div class="max-w-7xl mx-auto px-4">
+
+            <h2 class="text-3xl font-bold text-center mb-10">
+
+                Customer Reviews
+
+            </h2>
+
+            <div id="review-container"
+                class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact"
+        class="py-16">
+
+        <div class="max-w-md mx-auto bg-white dark:bg-gray-800 p-4 sm:p-6 rounded shadow mx-3 sm:mx-auto">
+
+            <h2 class="text-2xl font-bold mb-4">
+
+                Contact Us
+
+            </h2>
+
+            <form id="contact-form"
+                onsubmit="handleContact(event)"
+                class="flex flex-col gap-4">
+
+                <input
+                    type="text"
+                    id="contact-name"
+                    placeholder="Your Name"
+                    required
+                    class="p-3 border rounded text-black"
+                />
+
+                <input
+                    type="email"
+                    id="contact-email"
+                    placeholder="Your Email"
+                    required
+                    class="p-3 border rounded text-black"
+                />
+
+                <textarea
+                    id="contact-msg"
+                    placeholder="Your Message"
+                    required
+                    class="p-3 border rounded text-black"></textarea>
+
+                <button
+                    type="submit"
+                    class="bg-blue-600 text-white p-3 rounded">
+
+                    Send Message
+
+                </button>
+
+            </form>
+
+            <div id="thank-you"
+                class="text-green-500 mt-4 hidden">
+
+                Thank you for your message!
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white text-center p-5 sm:p-8 mt-10">
+
+        <p>© 2026 SmartShop. All rights reserved.</p>
+
+        <button onclick="openAbout()"
+            class="text-blue-400 underline mt-3">
+
+            About Us
+
+        </button>
+
+        <!-- POPUP -->
+        <div id="about-popup"
+            class="hidden fixed inset-0 bg-black/50 flex justify-center items-center">
+
+            <div class="bg-white text-black p-4 sm:p-6 rounded w-[92%] sm:w-[90%] max-w-sm">
+
+                <h2 class="text-2xl font-bold mb-4">
+
+                    About Us
+
+                </h2>
+
+                <p>
+
+                    SmartShop E-Commerce Website
+
+                </p>
+
+                <button onclick="closeAbout()"
+                    class="mt-5 text-3xl text-red-500">
+
+                    <i class="fa-solid fa-circle-xmark"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- TOP BUTTON -->
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+            class="mt-5 text-4xl text-blue-400">
+
+            <i class="fa-solid fa-circle-up"></i>
+
+        </button>
+
+    </footer>
+
+    <script src="pro.js"></script>
+
+</body>
+
+</html>
