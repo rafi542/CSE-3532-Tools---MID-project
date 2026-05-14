@@ -22,7 +22,7 @@ loadReviews();
 setInterval(nextSlide, 3000);
 
 
-// FETCH PRODUCTS
+
 function fetchProducts(){
 
     fetch('./Data/Products.json')
@@ -46,7 +46,7 @@ function fetchProducts(){
 }
 
 
-// RENDER PRODUCTS
+
 function renderProducts(products){
 
     const grid =
@@ -92,7 +92,7 @@ function renderProducts(products){
 
                     <div class="flex flex-col sm:flex-row gap-2">
 
-                        <!-- ADD -->
+                        
                         <button
                             onclick="addToCart(
                                 ${product.id},
@@ -129,7 +129,7 @@ function renderProducts(products){
 }
 
 
-// ADD TO CART
+
 function addToCart(id, price, title){
 
     const currentTotal =
@@ -154,7 +154,7 @@ function addToCart(id, price, title){
 }
 
 
-// REMOVE PRODUCT
+
 function removeProductPrice(id){
 
     const index =
@@ -178,7 +178,7 @@ function removeProductPrice(id){
 }
 
 
-// CALCULATE TOTAL
+
 function calculateTotal(){
 
     const subtotal =
@@ -194,7 +194,7 @@ function calculateTotal(){
 }
 
 
-// RENDER CART
+
 function renderCart(){
 
     const container =
@@ -233,7 +233,7 @@ function renderCart(){
 }
 
 
-// REMOVE CART ITEM
+
 function removeCart(index){
 
     cart.splice(index, 1);
@@ -242,8 +242,6 @@ function removeCart(index){
 
 }
 
-
-// SEARCH
 function filterProducts(){
 
     const term =
@@ -265,7 +263,6 @@ function filterProducts(){
 }
 
 
-// SORT
 function sortProducts(){
 
     const value =
@@ -295,7 +292,7 @@ function sortProducts(){
 }
 
 
-// APPLY COUPON
+
 function applyCoupon(){
 
     const code =
@@ -320,7 +317,6 @@ function applyCoupon(){
 }
 
 
-// ADD MONEY
 function addMoney(){
 
     balance += 1000;
@@ -330,7 +326,6 @@ function addMoney(){
 }
 
 
-// UPDATE UI
 function updateUI(){
 
     document.getElementById('user-balance').innerText =
@@ -343,7 +338,6 @@ function updateUI(){
 }
 
 
-// BUY NOW
 function buyNow(){
 
     const total =
@@ -380,7 +374,6 @@ function buyNow(){
 }
 
 
-// LOAD REVIEWS
 function loadReviews(){
 
     fetch('./Data/Reviews.json')
@@ -439,7 +432,6 @@ function loadReviews(){
 }
 
 
-// CONTACT FORM
 function handleContact(event){
 
     event.preventDefault();
@@ -453,7 +445,7 @@ function handleContact(event){
 }
 
 
-// MOBILE MENU
+
 function toggleMenu(){
 
     document.getElementById('mobile-menu')
@@ -462,7 +454,7 @@ function toggleMenu(){
 }
 
 
-// THEME
+
 function toggleTheme(){
 
     document.documentElement
@@ -471,7 +463,7 @@ function toggleTheme(){
 }
 
 
-// ABOUT POPUP
+
 function openAbout(){
 
     document.getElementById('about-popup')
@@ -488,7 +480,7 @@ function closeAbout(){
 }
 
 
-// SLIDER
+
 function showSlide(index){
 
     const banner =
